@@ -1,0 +1,10 @@
+--- package.json	2017-03-18 19:23:11.000000000 +0900
++++ package.custom.json	2017-03-18 19:23:21.000000000 +0900
+@@ -36,6 +36,7 @@
+     "gulp-autoprefixer": "^3.1.0",
+     "gulp-concat": "^2.6.0",
+     "gulp-rename": "^1.2.2",
++    "gulp-replace": "^0.5.4",
+     "gulp-ruby-sass": "^2.0.6",
+     "gulp-uglify": "^1.5.3"
+   }
