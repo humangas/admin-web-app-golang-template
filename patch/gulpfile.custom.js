@@ -5,7 +5,6 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create();
-
 var replace = require('gulp-replace');
 
 var GOEMON_LIVERELOAD_CODE = '  <script src="http://localhost:35730/livereload.js"></script>';
@@ -67,8 +66,10 @@ gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('build', function() {
     gulp.src(['./production/*.html'])
         .pipe(replace('href="../', 'href="/'))
+        .pipe(replace('src="images/', 'src="/images/'))
         .pipe(replace('\</head\>', GOEMON_LIVERELOAD_CODE + '\n</head>'))
         .pipe(gulp.dest('./' + DEST_ASSETS));
+    gulp.src('./production/images/**').pipe(gulp.dest('./' + DEST_ASSETS + 'images/'));
     gulp.src('./vendors/**').pipe(gulp.dest('./' + DEST_ASSETS + 'vendors/'));
     gulp.src('./build/**/*').pipe(gulp.dest('./' + DEST_ASSETS + 'build/'));
 });
