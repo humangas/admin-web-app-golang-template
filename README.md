@@ -14,6 +14,18 @@ $ cd $_
 $ make install
 ```
 
+## Dependencies
+
+- golang
+- node
+
+### For Mac
+
+```
+$ brew install go
+$ brew install node
+```
+
 
 # Development
 
